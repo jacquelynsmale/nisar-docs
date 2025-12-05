@@ -4,16 +4,27 @@ Source for the public documentation of the NASA-ISRO Synthetic Aperture Radar (N
 
 ## Contributing
 
+### Developer Setup
+
 1. Install [MyST Markdown](https://mystmd.org/guide/) in a Python environment of your choice via `conda install -c conda-forge mystmd`
 1. Create a fork of https://github.com/ua-asf/nisar-docs/
 1. Clone the repository and navigate to the repository root
 1. Run `myst start` to render the website on your local machine
 1. Configure previewing via GitHub Pages (optional)
    1. Enable GitHub Actions for your fork
+      <details>
+      <summary>screenshot</summary>
+      <img src="images/readme_enable_actions.png" alt="screenshot of enabling GitHub Actions" />
+      </details>
    1. Enable GitHub Pages for your fork with Source = GitHub Actions
-   1. Create a `BASE_URL` variable for GitHub Actions with a value of `/nisar-docs`
+      ![screenshot of enabling GitHub Actions](images/readme_enable_pages.png)
+   1. Create a `BASE_URL` variable for GitHub Actions with a value of `/nisar-docs` (including the leading `/`)
+      ![screenshot of enabling GitHub Actions](images/readme_base_url_variable.png)
    1. Push changes to your `main` branch
    1. Preview the rendered site at `https://{github_user_id}.github.io/nisar-docs/`
+
+## Propose Changes
+
 1. Make and commit your changes
 1. Push changes to your fork in GitHub
 1. Make sure your branch is synced and up to date with `ua-asf/nisar-docs:main`
