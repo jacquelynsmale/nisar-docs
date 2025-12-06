@@ -1,4 +1,4 @@
-# Naming conventions
+# Naming Conventions
 
 - [NISAR L0B](raw.md)
 - [NISAR L1 RSLC, L2 GSLC, L2 GCOV, L3 SME2](single.md)

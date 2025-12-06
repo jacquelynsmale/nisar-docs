@@ -1,6 +1,6 @@
 # Metadata
 
-The complete structure of the metadata is provided in the product specification. Key metadata fields and data dimensions that are embedded in the structure of the respective HDF5 product file are summarized per product in [Appendix D](../appendix-d-nisar-metadata/toc.md).
+The complete structure of the metadata is provided in the product specification.
 
 The metadata cube is a three-dimensional grid designed to simplify the calculation of parameters within a geographic information system (GIS) environment. These grids are defined for all NISAR level 1 (L1) and level 2 (L2) products. Users are advised to use three-dimensional interpolation routines (for Python, use the RegularGridInterpolator function of the open-source software *scipy*) to calculate values for several parameters for useful initial data analysis within a GIS environment. The geolocation error using the grids is estimated to be 1.5 cm. Further analysis is expected to lead to a more robust error estimate.
 

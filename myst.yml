@@ -60,12 +60,11 @@ project:
         - file: user-support/mission-homepage-tutorials.md
         - file: user-support/earthdata-forum.md
         - file: user-support/faqs.md
-    - title: Appendices
+    - file: appendices/index.md
       children:
         - file: appendices/acronyms.md
         - file: appendices/glossary.md
-        - title: Naming Conventions
-          file: appendices/naming-conventions/index.md
+        - file: appendices/naming-conventions/index.md
           children:
             - file: appendices/naming-conventions/raw.md
             - file: appendices/naming-conventions/single.md
