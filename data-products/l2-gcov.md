@@ -2,7 +2,7 @@
 
 ## Product Overview
 
-Geocoded Polometric Covariance (GCOV) products are L2 products derived from Range Doppler Single Look Complex (RSLC) products, which provide calibrated backscatter measurements corrected for both radiometric and terrain distortions. For users familiar with SAR amplitude products, these data can be used like Normalized Radar Backscatter (NRB) or Radiometrically Terrain-Corrected (RTC) products.
+Geocoded Polometric Covariance (GCOV) products provide calibrated backscatter measurements corrected for both radiometric and terrain distortions. For users familiar with SAR amplitude products, these data can be used like Normalized Radar Backscatter (NRB) or Radiometrically Terrain-Corrected (RTC) products.
 
 Due to the side-looking nature of NISAR, topography can significantly affect the magnitude of backscatter, with areas facing the sensor becoming artificially “brighter” (i.e., increased backscatter) and areas away from the sensor turning “darker” (i.e., decreased backscatter) in the images, which biases covariance measurements. To mitigate the effect of topography, an area-based radiometric terrain correction (RTC) is applied to the covariance terms, normalizing the backscatter. The reference DEM for processing and RTC is based on the [Copernicus DEM 30m and 90 m](https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM).  These normalized terms are then geocoded to the output grid using area-based adaptive multi-looking.
 
@@ -41,9 +41,9 @@ A GCOV data product includes the following raster data sets. For a more detailed
 
 The primary data elements of the GCOV product are the images of the geocoded polarimetric covariance terms.
 
-The diagonal terms (HHHH, HVHV, VVVV, VHVH, RHRH, RVRV) are real-valued and represent the radar backscatter.
+The diagonal terms (HHHH, HVHV, VVVV, VHVH, RHRH, RVRV) are real-valued and describe the intensity of the radar backscatter for the given polarization.
 
-The remaining terms (HHHV, HHVH, HHVV, HVVH, HVVV, VHVV, RHRV) are complex valued and relate to the electrical and geometric properties of the observed surface.
+The remaining terms (HHHV, HHVH, HHVV, HVVH, HVVV, VHVV, RHRV) are complex-valued and describe the intensity and phase between different polarization.
 
 Which frequencies and polarizations are available in a particular GCOV data product will vary based on the acquisition mode of the satellite used to collect the data.
 
