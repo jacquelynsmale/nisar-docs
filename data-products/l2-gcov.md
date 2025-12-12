@@ -2,20 +2,11 @@
 
 ## Product Overview
 
-The GCOV product is an L2 product derived from the L1 Range Doppler Single Look Complex (RSLC) product, providing terrain-corrected polarimetric covariance projected onto a predefined UTM or polar stereographic projection system grid. RSLC radar samples, organized as a polarimetric scattering vector, are cross-correlated with the scattering vector’s conjugate transpose, originating the polarimetric covariance matrix expressed in the same grid as the RSLC range-Doppler grid. 
+Geocoded Polometric Covariance (GCOV) products are L2 products derived from Range Doppler Single Look Complex (RSLC) products, which provide calibrated backscatter measurements corrected for both radiometric and terrain distortions. For users familiar with SAR amplitude products, these data can be used like Normalized Radar Backscatter (NRB) or Radiometrically Terrain-Corrected (RTC) products.
 
-The magnitude of the resulting polarimetric covariance terms is strongly affected by the topography, with areas facing the sensor becoming brighter and areas away from the sensor turning darker in the images, biasing covariance measurements. To reduce the effect of the topography, an area-based radiometric terrain correction (RTC) is applied over the covariance terms, normalizing the backscatter coefficient beta0 to gamma0. The normalized covariance terms are then geocoded onto the output grid using area-based adaptive multi-looking. 
+Due to the side-looking nature of NISAR, topography can significantly affect the magnitude of backscatter, with areas facing the sensor becoming artificially “brighter” (i.e., increased backscatter) and areas away from the sensor turning “darker” (i.e., decreased backscatter) in the images, which biases covariance measurements. To mitigate the effect of topography, an area-based radiometric terrain correction (RTC) is applied to the covariance terms, normalizing the backscatter. The reference DEM for processing and RTC is based on the [Copernicus DEM 30m and 90 m](https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM).  These normalized terms are then geocoded to the output grid using area-based adaptive multi-looking.
 
-```{figure} /assets/nisar-gcov.png
-:label: covariance
-:alt: Covariance polarimetric matrix elements
-:width: 400px
-:align: left
-
-Covariance polarimetric matrix elements
-```
-
-Since the polarimetric covariance matrix is Hermitian, only the upper triangular covariance terms are provided. The diagonal terms of the polarimetric covariance matrix (highlighted in darker gray) are real-valued (HHHH, HVHV, VHVH, and VVVV, or RHRH and RVRV), representing the radar backscatter associated with each polarimetric channel. The off-diagonal terms of the polarimetric covariance matrix (highlighted in lighter gray) are complex-valued (HHHV, HHVH, HHVV, HVVH, and VHVV, or RHRV) and may or may not be present depending on the GCOV processing mode.
+Download-ready GCOV products are projected to their appropriate UTM zone and have a pixel spacing of 10 or 20 meters, depending on acquisition location. Each product includes a covariance variable for each polarization available from acquisition.
 
 ## Finding Data
 
@@ -29,7 +20,7 @@ Since the polarimetric covariance matrix is Hermitian, only the upper triangular
 
 ## Data Layers
 
-A GCOV data product includes the following raster data sets. For more information, see section 4.3 of the [product specification](#product-specification).
+A GCOV data product includes the following raster data sets. For a more detailed description of these data layers, see @l2_gcov_product_specs2025 [Section 4.3].
 
 ### Geocoded Polarimetric Covariance Terms
 ```
@@ -56,7 +47,7 @@ The remaining terms (HHHV, HHVH, HHVV, HVVH, HVVV, VHVV, RHRV) are complex value
 
 Which frequencies and polarizations are available in a particular GCOV data product will vary based on the acquisition mode of the satellite used to collect the data.
 
-For more information on NISAR polarimetry, see [TODO](https://science.nasa.gov/mission/nisar/polarimetry/)
+For more information on NISAR polarimetry, see @nisarPolarimetry
 
 ### Number of Looks
 
